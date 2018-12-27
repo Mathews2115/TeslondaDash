@@ -1,8 +1,8 @@
 # TeslondaDash
 
 Front-end for the Teslonda Super Car Dash
-* Used in conjection with Teslonda Server: https://github.com/Mathews2115/TeslondaServer
-* RPI setup: https://gist.github.com/Mathews2115/ed3dbd8623ee815a7bed363dbc7c73a6
+* Used in conjection with [Teslonda Server](https://github.com/Mathews2115/TeslondaServer)
+* [RPI setup](https://gist.github.com/Mathews2115/ed3dbd8623ee815a7bed363dbc7c73a6)
 
 ## Introduction
 
@@ -17,7 +17,7 @@ The first screen started out as a 7" display at 800x480. It was mostly designed 
 Binary Websockets are the main connection to the NodeJS server for the data.
 
 ### Questions?
-Feel free to contact me at cloroxman at gmail dot com.  Or find me on Instagram [https://www.instagram.com/cloroxman/]
+Feel free to contact me at cloroxman at gmail dot com.  Or find me on [Instagram](https://www.instagram.com/cloroxman/)
 
 ### General Overview
 
