@@ -1,4 +1,4 @@
-# TeslondaDash
+# Teslonda Front-end (Dashboard)
 
 Front-end for the Teslonda Super Car Dash
 * Used in conjection with [Teslonda Server](https://github.com/Mathews2115/TeslondaServer)
