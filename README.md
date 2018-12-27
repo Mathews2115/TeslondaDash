@@ -16,6 +16,9 @@ The first screen started out as a 7" display at 800x480. It was mostly designed 
 
 Binary Websockets are the main connection to the NodeJS server for the data.
 
+### Questions?
+Feel free to contact me at cloroxman at gmail dot com.  Or find me on Instagram [https://www.instagram.com/cloroxman/]
+
 ### General Overview
 
 The stack is Angular 5; (on top of a NodeJS server with express). Default root route is the main dash screen; the `/main` will load the add-on screen.
