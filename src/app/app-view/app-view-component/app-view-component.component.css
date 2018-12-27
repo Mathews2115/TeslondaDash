@@ -1,0 +1,218 @@
+:root {
+  --main-fg-color: #f17500;
+  --main-bg-color: #7d2b12;
+  --main-fg-secondary-color: #00da29;
+  --main-bg-secondary-color: #005522;
+  --bg-color: black;
+}
+
+#top {
+  background-image: url('../../../assets/images/borders/top-border.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+}
+#top-left {
+  background-image: url('../../../assets/images/borders/top-left-border.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 44px;
+}
+#top-right {
+  background-image: url('../../../assets/images/borders/top-right-border.png');
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 41px;
+  height: 44px;
+}
+
+#bottom {
+  background-image: url('../../../assets/images/borders/bottom-border.png');
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+}
+#bottom-left {
+  background-image: url('../../../assets/images/borders/bottom-left-border.png');
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 42px;
+  height: 35px;
+}
+#bottom-right {
+  background-image: url('../../../assets/images/borders/bottom-right-border.png');
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 41px;
+  height: 36px;
+}
+
+#left {
+  background-image: url('../../../assets/images/borders/left-stretch-border.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+}
+#right {
+  background-image: url('../../../assets/images/borders/right-stretch-border.png');
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 27px;
+  height: 100%;
+}
+/* HARD CODED UGLY DUMB STUFF but hey gotta get that MVP out */
+#bezel {
+  height: 734px;
+  width: 1280px;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  /* margin so buttons hang over it */
+  margin-top: -16px;
+}
+
+.app-view {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, gray 1px, transparent 1px);
+}
+
+:host {
+  overflow: hidden;
+}
+
+/* :host {
+} */
+  /* background: #656565; */
+
+
+.control-panel {
+  position: relative;
+  z-index: 10;
+  padding-top: 10px;
+  perspective-origin: 50% -10%;
+  perspective: 300px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+  height: 70px;
+}
+
+.ctrl_button {
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: cubic-bezier(0.4, 0, 0.03, 1.62) 0.2s transform;
+}
+
+.ctrl_button p {
+  color: #949494;
+  text-align: center;
+  margin:0;
+}
+
+/* cube faces */
+.ctrl_button .top,
+.ctrl_button .right-side,
+.ctrl_button .left-side {
+  height: 100%;
+  position: absolute;
+}
+
+.ctrl_button .top {
+  background: #ADADAD;
+  width: 100%;
+  transform: translate3D(0, -50%, -33px) rotateX(90deg);
+  /* Z is half of .ctrl_button height */
+}
+.ctrl_button .front {
+  border-left: #808080 solid 2px;
+  border-right: #949494 solid 2px;
+  border-bottom: var(--bg-color) solid 2px;
+  border-top: #ADADAD solid 2px;
+  width: 100%;
+  height: 100%;
+  background: #656565;
+  position: absolute;
+  box-sizing: border-box;
+  transform: translateZ(0px);
+}
+
+.ctrl_button .right-side {
+  width: 50%;
+  background: #949494;
+  transform: translate3D(150%, -0, -25px) rotateY(-90deg);
+}
+.ctrl_button .left-side {
+  width: 50%;
+  background: #808080;
+  transform: translate3D(-50%, -0, -25px) rotateY(-90deg);
+  /* Z is half of .ctrl_button width */
+}
+
+/* NOT PRESSED */
+#left-button {
+  transform: translateX(-150px);
+}
+#middle-button {
+  transform: translateX(-50px);
+}
+#middle-button-2 {
+  transform: translateX(50px);
+}
+#right-button {
+  transform: translateX(150px);
+}
+
+/* PRESSED */
+#left-button.pressed {
+  transform: translate3d(-150px, 0,-60px) scaleZ(0.1);
+}
+#middle-button.pressed {
+  transform: translate3d(-50px, 0,-60px) scaleZ(0.1);
+}
+#middle-button-2.pressed {
+  transform: translate3d(50px, 0,-60px) scaleZ(0.1);
+}
+#right-button.pressed {
+  transform: translate3d(150px, 0,-60px) scaleZ(0.1);
+}
+
+
+.light {
+  width: 15px;
+  height: 5px;
+  background: darkgreen;
+  margin: 8px auto;
+  border: 1px solid gray;
+}
+.pressed .light {
+  background: greenyellow;
+}
+.reload .light {
+  background: darkred;
+}
+.reload.pressed .light {
+  background: red;
+}

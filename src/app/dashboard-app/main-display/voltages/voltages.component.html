@@ -1,0 +1,22 @@
+<div class="bg-text"> Input </div>
+<table>
+    <tr>
+      <td><div id="battery12v" [ngClass]="{'icon':true, 'bg_hot':batt12Alert}"></div></td>
+      <td class="_12v readout">{{ batt12Readout }}<span class="bg-text">v</span></td>
+    </tr>
+    <tr>
+        <td>
+          <div id="battery-pack" [ngClass]="{'icon':true, 'bg_hot':packAlert}"></div>
+        </td>
+        <td>
+          <tr>
+            <td class="readout">{{packVolt}} </td>
+            <td><span class="bg-text">V</span></td>
+          </tr>
+          <tr>
+            <td class="readout">{{ packAmp }} </td>
+            <td><span class="bg-text">~A</span></td>
+          </tr>
+        </td>
+    </tr>
+</table>

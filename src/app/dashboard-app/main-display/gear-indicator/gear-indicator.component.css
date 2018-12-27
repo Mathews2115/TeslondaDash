@@ -1,0 +1,9 @@
+:host {
+  position: absolute;
+  top: 364px;
+  left: 422px;
+}
+
+#gear-label {
+  font-size: 18px;
+}

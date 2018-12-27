@@ -1,0 +1,26 @@
+:host {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.readout-label {
+  font-size: 8pt;
+  padding-bottom: 5px;
+}
+
+.simple-readout {
+  color: #f17500;
+  font-family: 'Pixel LCD-7';
+  font-size: 12pt;
+}
+
+.simple-readout span {
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+}
+
+.max {
+  display: inline;
+}

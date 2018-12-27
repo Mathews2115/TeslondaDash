@@ -1,0 +1,52 @@
+<div class='control-panel'>
+  <a class='ctrl_button' routerLink="/app/main" routerLinkActive="pressed" id='left-button'>
+    <div class='top'></div>
+    <div class='right-side'></div>
+    <div class='front'>
+      <div class='light'></div>
+      <p> MAIN </p>
+    </div>
+  </a>
+
+  <a class='ctrl_button reload' [ngClass]='rebootStatus' (click)='reboot()' id='right-button' >
+    <div class='top'></div>
+    <div class='left-side'></div>
+    <div class='front'>
+      <div class='light'></div>
+      <p> RELOAD </p>
+    </div>
+  </a>
+
+  <a class='ctrl_button' routerLink="/app/godview" routerLinkActive="pressed" id='middle-button' >
+    <div class='top'></div>
+    <div class='left-side'></div>
+    <div class='right-side'></div>
+    <div class='front'>
+      <div class='light'></div>
+      <p> GOD VIEW </p>
+    </div>
+  </a>
+
+  <a class='ctrl_button' routerLink="/app/dump" routerLinkActive="pressed" id='middle-button-2' >
+    <div class='top'></div>
+    <div class='left-side'></div>
+    <div class='right-side'></div>
+    <div class='front'>
+      <div class='light'></div>
+      <p> LOG </p>
+    </div>
+  </a>
+</div>
+<div id='bezel'>
+  <div id='right'></div>
+  <div id='left'></div>
+  <div id='top'></div>
+  <div id='top-left'></div>
+  <div id='top-right'></div>
+  <div id='bottom'></div>
+  <div id='bottom-right'></div>
+  <div id='bottom-left'></div>
+  <div class="app-view">
+    <router-outlet></router-outlet>
+  </div>
+</div>

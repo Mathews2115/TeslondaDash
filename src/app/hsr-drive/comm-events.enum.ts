@@ -1,0 +1,6 @@
+export enum CommEvents {
+  DISCONNECTED,
+  CONNECTED,
+  HSR_CONNECTED,
+  HSR_DISCONNECTED,
+}

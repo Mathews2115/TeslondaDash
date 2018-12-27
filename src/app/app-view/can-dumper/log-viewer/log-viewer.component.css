@@ -1,0 +1,99 @@
+:host {
+  display: flex;
+  overflow: hidden;
+  flex:1;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+:root {
+  --main-fg-color: #f17500;
+  --main-bg-color: #7d2b12;
+  --main-fg-secondary-color: #00da29;
+  --main-bg-secondary-color: #005522;
+  --bg-color: black;
+}
+
+#data_view {
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+}
+section.control_panel {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+section.control_panel > .hexagon {
+  display: flex;
+  flex: 1;
+}
+
+section.control_panel > .hexagon.back {
+  justify-content: flex-start;
+}
+section.control_panel > .hexagon.center {
+  justify-content: center;
+}
+section.control_panel > .hexagon.delete {
+  justify-content: flex-end;
+}
+
+section.control_panel > .hexagon > article {
+  height: 100px;
+  width: 100px;
+  margin: 0 5px;
+}
+
+section.control_panel .hexagon > article.delete {
+  background: red;
+}
+section.control_panel .hexagon > article.delete > figure > p {
+  color: red;
+}
+
+section.control_panel article p {
+  color: white;
+}
+section.control_panel article.alert p {
+  color: #ff0000;
+}
+section.control_panel article.warning p {
+  color: #ff6100;
+}
+section.control_panel article.medium p {
+  color: #f16800;
+}
+section.control_panel article.lownormal p {
+  color: #f0b400;
+}
+
+section.control_panel article.off {
+  background:#6b3400;
+}
+section.control_panel article.off p {
+  color: #6b3400;
+}
+
+
+section.report {
+  flex:2;
+}
+section.report > span:after {
+  color: white;
+}
+
+section.report {
+  z-index: 1;
+}
+
+section.graphing_fun{
+  flex:3;
+
+  display:flex;
+  flex-direction: column;
+}
+section.graphing_fun.graph_container {
+  flex:4;
+}

@@ -1,0 +1,211 @@
+:root {
+  --main-fg-color: #f17500;
+  --main-bg-color: #7d2b12;
+  --main-fg-secondary-color: #00da29;
+  --main-bg-secondary-color: #005522;
+  --bg-color: black;
+}
+
+:host {
+  color: var(--main-fg-color);
+}
+
+p {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.slider-container {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+app-game-speak-window {
+  flex: 1 0 100%;
+}
+:host ,
+.scene {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+section.bar {
+  flex: 0.3;
+  width:100%;
+  background-color:var(--main-fg-color);
+  position: relative;
+}
+section.main {
+  flex: 4;
+  width: 100%;
+  background-color:  transparent;
+  display: inline-flex;
+  position: relative;
+}
+
+.connected > section.main > section > p {
+  font-size: 90px;
+  color: var(--main-fg-color);
+  margin: 1rem;
+}
+
+.disco > section.main p {
+  align-self: center;
+  font-size: 70px;
+  background: var(--bg-color);
+  justify-self: center;
+  z-index: 12;
+  padding: 58px;
+  color: var(--main-fg-color);
+  animation: blink_text 1s infinite
+}
+
+.anim {
+  background-image: repeating-linear-gradient(
+    -45deg,transparent,transparent 4rem,
+    var(--bg-color) 4rem,
+    var(--bg-color) 10rem);
+    animation-duration: 50s;
+}
+
+section.bar:nth-of-type(1) > .anim{
+  animation-direction: reverse;
+}
+
+section.main_menu {
+  display: flex;
+  flex-direction: column;
+}
+section.main_menu > p {
+  flex:1;
+  font-size: 5em;
+}
+section.main_menu > .button_container {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+}
+section.main_menu > .button_container > .hexagon {
+  grid: none;
+  margin: 0 5px;
+}
+section.main_menu > .button_container > .hexagon > article {
+  height: 230px;
+  width: 230px;
+}
+section.main_menu > .button_container > .hexagon > article > figure > p {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+section > section.back_button {
+  flex:1;
+}
+section > section.back_button > .hexagon {
+  grid: none;
+  margin: 0 5px;
+}
+section > section.back_button > .hexagon > article {
+  height: 230px;
+  width: 230px;
+}
+section > section.back_button > .hexagon > article > figure > p {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/*--------------- LOG TYPE SELECT SECTION ------------------------ */
+section.log_select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.log_select > .log_selection_container {
+  flex:4;
+  display: flex;
+  flex-direction: column;
+}
+section.log_select > .log_selection_container > p {
+  flex:1;
+  font-size: 2em;
+}
+
+section.log_select > .log_selection_container > .selection {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+section.log_select > .log_selection_container > .selection > .hexagon {
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1%;
+}
+section.log_select > .log_selection_container  > .selection > .hexagon > article {
+  height: 170px;
+  width: 170px;
+}
+section.log_select > .log_selection_container  > .selection > .hexagon > article:nth-of-type(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+section.log_select > .log_selection_container > .selection > .hexagon > article:nth-of-type(2) {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+section.log_select > .log_selection_container > .selection > .hexagon > article:nth-of-type(3) {
+  grid-column: 3 / span 2;
+  grid-row: 1;
+}
+section.log_select > .log_selection_container > .selection > .hexagon > article:nth-of-type(4) {
+  grid-column: 4 / span 2;
+  grid-row: 2;
+}
+section.log_select > .log_selection_container > .selection > .hexagon > article:nth-of-type(1),
+section.log_select > .log_selection_container > .selection > .hexagon > article:nth-of-type(3) {
+  margin-bottom: calc(100% * -0.22);
+}
+
+section.log_select > .can_dumper_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+section.log_select > .can_dumper_container > .hexagon {
+  grid: none;
+  margin: 0 5px;
+}
+section.log_select > .can_dumper_container > .hexagon > article {
+  height: 230px;
+  width: 230px;
+  background: red;
+}
+section.log_select > .can_dumper_container > .hexagon > article > figure {
+
+}
+section.log_select > .can_dumper_container > .hexagon > article > figure > p {
+  text-align: center;
+  font-size: 1.5em;
+  color: red;
+}
+
+
+
+/* connecting lines between components */
+.connecting_line {
+  flex:0.2;
+}

@@ -1,0 +1,33 @@
+<app-game-speak-window></app-game-speak-window>
+<section class='title'>
+  <img id='logo' src='../../assets/images/TeslondaLogoOrange.png'/>
+  <span>POWER PILOT</span>
+</section>
+<section class='car_readout'>
+  <div class="status">
+    <status-bar [@barState]="state(MONITOR_TYPE.TITLE)" id='status_title' [data]="{ title: 'TESLONDA STATUS', alert: false }"></status-bar>
+    <status-bar [@barState2]="state(MONITOR_TYPE.DASH)" [data]=dashStatus></status-bar>
+    <status-bar [@barState3]="state(MONITOR_TYPE.CAN)" [data]=canStatus></status-bar>
+    <status-bar [@barState4]="state(MONITOR_TYPE.HSR)" [data]=hsrStatus></status-bar>
+    <status-bar [@barState4]="state(MONITOR_TYPE.HSR_TEMP)" [data]=hsrStatusTemp></status-bar>
+    <status-bar [@barState4]="state(MONITOR_TYPE.HSR_VOLT)" [data]=hsrStatusVolt></status-bar>
+  </div>
+  <div class='car'>
+    <img id='teslonda_car' src='../../assets/images/carIcon.svg'/>
+    <div class='icons'>
+      <div *ngIf="!hsrComm.hsrConnected" class='hsr_warning'>!!!</div>
+      <div *ngIf="!hsrComm.connected" class='dash_warning'>!</div>
+      <div *ngIf="brakeIdiotLight" class='brake_lights'><span></span><span></span></div>
+      <div *ngIf="reverseIdiotLight" class='reverse_lights'><span></span><span></span></div>
+      <div *ngIf="tempIdiotLight" class='temp_alert'>T</div>
+      <div *ngIf="voltDanger" class='volt_alert'>V</div>
+    </div>
+  </div>
+  <div class="status">
+      <status-bar [@rightState]="optionsState" id='options_title' [data]="{ title: 'HSR OPTIONS', alert: false }"></status-bar>
+      <status-bar [@rightState1]="optionsState" [data]="tractionControl"></status-bar>
+      <status-bar [@rightState2]="optionsState" [data]=creepMode></status-bar>
+      <status-bar [@rightState3]="optionsState" [data]=regenMode></status-bar>
+      <status-bar [@rightState3]="optionsState" [data]=choochMode></status-bar>
+  </div>
+</section>

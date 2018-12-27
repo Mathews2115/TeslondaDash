@@ -1,0 +1,18 @@
+
+<section class='back_button'>
+  <div class='hexagon'>
+    <article class='selectable cancel' (click)='onBack()'>
+      <figure>
+        <p>Go Back</p>
+      </figure>
+    </article>
+  </div>
+</section>
+<section class='list'>
+  <p>
+    Select Log 
+  </p>
+  <div class='file_list'>
+    <div class='list_item' *ngFor='let file of logFiles' (click)='load(file)'>{{ file }}</div>
+  </div>
+</section>

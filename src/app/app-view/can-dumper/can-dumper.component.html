@@ -1,0 +1,88 @@
+<app-game-speak-window>
+</app-game-speak-window>
+<div class='scene disco' *ngIf="!hsrComm.connected">
+  <section class='bar'></section>
+  <section class='main'>
+    <div class='anim'> </div>
+    <p> !OFFLINE! </p>
+  </section>
+  <section class='bar'></section>
+</div>
+<div class='scene connected' *ngIf="hsrComm.connected" [ngSwitch]="state">
+  <section class='main'>
+    <section class='main_menu' *ngSwitchCase="states.MENU">
+      <p> MAIN MENU </p>
+      <div class='button_container'>
+        <div class='hexagon'>
+          <article class='selectable save' [ngClass]="{'off': !hsrComm.hsrConnected}" (click)='menuSelect(states.SELECT)'>
+            <figure>
+              <p>Start Session</p>
+            </figure>
+          </article>
+        </div>
+        <div class='hexagon'>
+          <article class='selectable cancel' (click)='menuSelect(states.LIST)'>
+            <figure>
+              <p>View Session</p>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class='log_select' *ngSwitchCase="states.SELECT">
+      <section class='back_button'>
+        <div class='hexagon'>
+          <article class='selectable cancel' (click)='menuSelect(states.MENU)'>
+            <figure>
+              <p>Go Back</p>
+            </figure>
+          </article>
+        </div>
+      </section>
+      <section class='log_selection_container'>
+        <p>
+          Select Session Type!
+        </p>
+        <div class='selection'>
+          <div class='hexagon main_bg'>
+            <article class='selectable cancel off' (click)='denied(types.ZERO_SIXTY_PULL)'>
+              <figure>
+                <p>0-60 MPH</p>
+                <h2>[DISABLED]</h2>
+              </figure>
+            </article>
+            <article class='selectable save' (click)='log(types.GENERAL)'>
+              <figure>
+                  <p>Start Logging</p>
+              </figure>
+            </article>
+            <article class='selectable cancel off' (click)='denied(types.QTR_MILE)'>
+              <figure>
+                  <p>1/4 Mile</p>
+                  <h2>[DISABLED]</h2>
+              </figure>
+            </article>
+            <article class='selectable cancel off'(click)='denied(types._8TH_MILE)'>
+              <figure>
+                  <p>1/8 Mile</p>
+                  <h2>[DISABLED]</h2>
+              </figure>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class='can_dumper_container'>
+        <div class='hexagon'>
+          <article class='selectable' (click)='dumpCAN()'>
+            <figure>
+              <p>{{ hsrComm.dumping ? "Stop Recording" : "Record Raw Can"}}</p>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+    </section>
+    <app-log-list *ngSwitchCase="states.LIST" (menuSelect)="menuSelect($event)">...</app-log-list>
+    <app-log-viewer *ngSwitchCase="states.VIEW" (menuSelect)="menuSelect($event)">...</app-log-viewer>
+  </section>
+</div>

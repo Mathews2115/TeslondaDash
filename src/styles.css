@@ -1,0 +1,379 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face{
+  font-family: 'Press Start 2P';
+  src: url('./assets/fonts/PressStart2P-Regular.ttf');
+}
+@font-face{
+  font-family: 'Pixel LCD-7';
+  src: url('./assets/fonts/Pixel-LCD-7.ttf');
+}
+@font-face{
+  font-family: 'Kemco Pixel Bold';
+  src: url('./assets/fonts/Kemco_Pixel_Bold.ttf');
+}
+
+:root {
+  --main-fg-color: #f17500;
+  --main-bg-color: #7d2b12;
+  --main-fg-Off: #6b3400;
+  --main-fg-secondary-color: #00da29;
+  --main-bg-secondary-color: #005522;
+  --bg-color: black;
+}
+
+html, body {
+  margin: 0;
+  background-color: var(--bg-color);
+}
+body {
+  font-family: 'Press Start 2P';
+  font-size: 14px;
+  color: var(--main-bg-color);
+  overflow: hidden;
+  max-height: 800px;
+  max-width: 1280px;
+}
+
+body > * {
+  user-select: none;
+}
+
+.center_text {
+  text-align: center;
+}
+
+canvas.pixelize {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.bg-text {
+  color: var(--main-bg-color);
+  font-family: 'Press Start 2P';
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+button {
+  font-family: 'Press Start 2P';
+}
+
+.fg-text {
+  color: var(--main-fg-color);
+  font-family: 'Press Start 2P';
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.readout {
+  color: var(--main-fg-color);
+  font-family: 'Pixel LCD-7';
+  font-size: 16px;
+  margin-top: 0.12em; /* FONT HACK */
+}
+
+
+.secondary {
+  color: var(--main-fg-secondary-color);
+}
+
+.readout::before {
+  content: '';
+  vertical-align: middle;
+  display: inline;
+}
+
+.dashboard-hidden{
+  display: none;
+  position: absolute;
+}
+
+.dashboard-showing{
+  display: block;
+  position: relative;
+}
+
+.large-readout {
+  font-size: 34px;
+}
+
+.larger-readout {
+  font-size: 44px;
+}
+
+.ind-label {
+  font-size: 18px;
+}
+
+.icon {
+  width:50px;
+  height:50px;
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-color: var(--main-fg-color);
+}
+
+.bg_hot, .bg_alert {
+  background-color:#ff0000;
+}
+
+.hot,
+.alert {
+  color: #ff0000;
+}
+
+.warning {
+  color: #ff6100;
+}
+
+.cold {
+  color:blue;
+}
+@keyframes blinking {
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.slider-container .mat-slider-horizontal  {
+  height: 60px;
+}
+.slider-container .mat-slider-horizontal .mat-slider-wrapper {
+  background-color: var(--main-bg-color);
+  height:45px;
+  left:0;
+  top:0;
+  right:0;
+}
+
+.slider-container .mat-slider-thumb  {
+  right: -15px;
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  transform: none;
+  transition: none;
+  background-color: var(--main-fg-color);
+  animation: blinking 1s infinite ease-in-out;
+}
+mat-slider {
+  width: 100%;
+}
+
+.ring_container {
+  display: inline-flex;
+  position: relative;
+  width: 150px;
+  align-items: center;
+  text-align: center;
+}
+.ring_container > .ring_section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------      hexagon/honeycomb handling -------------------*/
+.hexagon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2%;
+  max-width: 100%;
+  position: relative;
+}
+.hexagon > article {
+  background: var(--main-fg-color);
+  overflow: hidden;
+  transition: 1s;
+  transition-property: background, background-color, color;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.hexagon > article.selectable > figure {
+  clip-path: polygon(50% 10%, 90% 30%, 90% 70%, 50% 90%, 10% 70%, 10% 30%);
+}
+
+.hexagon > article > figure {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100%;
+  font-size: calc(1rem + 1%);
+  line-height: 1.2;
+  transition: 0.75s 0.05s;
+  transition-property: background, background-color, color;
+  hyphens: auto;
+  text-align: center;
+  margin: 0;
+  padding: 0 5px;
+  color: var(--bg-color);
+}
+.hexagon > article > figure h2 {
+  transition: 0.75s 0.05s;
+  transition-property: background, background-color, color;
+  font-size: 100%;
+  font-variant: small-caps;
+  font-family: "Pixel LCD-7";
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--main-fg-secondary-color);
+  padding-top: 4px;
+}
+.hexagon > article > figure p {
+  font-size: 70%;
+  line-height: 1.2;
+  width: 100%;
+  margin: 0px;
+  margin-top: 5px;
+}
+.hexagon > article.non-important {
+  background: var(--main-bg-color);
+}
+.hexagon > article.regen {
+  background: var(--main-fg-secondary-color);
+}
+
+.hexagon > article.adjustable figure p {
+  margin-top: 0;
+}
+
+.hexagon > article.adjustable h2 {
+  background: inherit;
+  color: inherit;
+}
+
+.hexagon > article.cancel figure p,
+.hexagon > article.save figure p {
+  margin-top: 0;
+  font-size: 100%;
+}
+
+/* .hexagon:first-of-type */
+
+.hexagon > article.selectable > figure {
+  background-color: var(--bg-color);
+}
+
+.hexagon > article.selectable.save {
+  background-color: var(--main-fg-secondary-color);
+}
+
+.hexagon > article.selectable.save > figure > h2,
+.hexagon > article.selectable.save > figure > p {
+  color: var(--main-fg-secondary-color);
+}
+
+.hexagon > article.selectable.cancel {
+  background-color: var(--main-fg-color);
+}
+.hexagon > article.selectable.cancel > figure > h2,
+.hexagon > article.selectable.cancel > figure > p {
+  color: var(--main-fg-color);
+}
+
+.hexagon.main_bg > article.off > figure > p {
+  color:  var(--main-fg-Off);
+}
+.hexagon.main_bg > article.off {
+  background: var(--main-fg-Off);
+}
+
+.gauge_container {
+  height: 100px;
+  position: relative;
+  width: 100px;
+  box-sizing: content-box;
+}
+.gauge_container > .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: var(--main-fg-color) 2px solid;
+  border-radius: 50%;
+  border-right: var(--main-fg-color) 2px solid;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-property: background, background-color, color;
+}
+.gauge_container > .circle.fast {
+  border-left: #ff0000 3px solid;
+  border-right: #ff0000 3px solid;
+}
+.gauge_container > .circle.medium {
+  border-left: #ff6100 3px solid;
+  border-right: #ff6100 3px solid;
+}
+.gauge_container > .circle.slow {
+  border-left: #f16800 2px solid;
+  border-right: #f16800 2px solid;
+}
+.gauge_container > .circle.fast.reverse,
+.gauge_container > .circle.medium.reverse,
+.gauge_container > .circle.slow.reverse,
+.gauge_container > .reverse {
+  border-left-color: var(--main-fg-secondary-color);
+  border-right-color: var(--main-fg-secondary-color);
+}
+/* --------------      hexagon/honeycomb handling -------------------*/
+
+
+.anim {
+  position: absolute;
+  width: 150%;
+  height:100%;
+  background: var(--main-fg-color);
+  bottom:0;
+  left:0;
+  background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 6rem,
+      black 6rem,
+      black 10rem
+    );
+  background-size: 200% 200%;
+  animation: barberpole 30s linear infinite;
+}
+
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes blink_text {
+  50% {
+    color:var(--bg-color);
+  }
+}
+
+@keyframes full_blink {
+  0% {
+    opacity: 1;
+  }
+  69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+}

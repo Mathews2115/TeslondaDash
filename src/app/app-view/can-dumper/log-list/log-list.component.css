@@ -1,0 +1,44 @@
+.list_item {
+  text-align: center;
+  padding: 10px;
+  background: #f17500;
+  color: black;
+  margin: 5px auto;
+  max-width: 540px;
+}
+
+p {
+  text-align: center;
+}
+
+.file_list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+:host {
+  display: flex;
+  flex: 1;
+}
+section.list {
+  flex:3;
+  flex-direction: column;
+  display: flex;
+}
+section.back_button {
+  flex: 1;
+  align-self: center;
+}
+section.back_button > .hexagon {
+  grid: none;
+  margin: 0 5px;
+  justify-content: center;
+}
+section.back_button > .hexagon > article {
+  height: 230px;
+  width: 230px;
+}
+section.back_button > .hexagon > article > figure > p {
+  text-align: center;
+  font-size: 1.5em;
+}

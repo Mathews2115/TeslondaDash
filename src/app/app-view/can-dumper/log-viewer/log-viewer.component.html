@@ -1,0 +1,61 @@
+<section class='control_panel'>
+  <div class='hexagon back'>
+    <article class='selectable medium' *ngIf='!hsrComm.logging' (click)='onBack()'>
+      <figure>
+        <p>Back</p>
+      </figure>
+    </article>
+  </div>
+  <div class='hexagon center'>
+    <article class='selectable' *ngIf='hsrComm.logging' (click)='hsrComm.loggerService.stop()'>
+      <figure>
+        <p>STOP</p>
+      </figure>
+    </article>
+    <article class='selectable medium' [ngClass]="{'off':isHidden(series.AMP)}" (click)='toggle(series.AMP)'>
+      <figure>
+        <p>Amps</p>
+      </figure>
+    </article>
+    <article class='selectable alert' [ngClass]="{'off':isHidden(series.MPH)}" (click)='toggle(series.MPH)'>
+      <figure>
+        <p>MPH</p>
+      </figure>
+    </article>
+    <article class='selectable lownormal' [ngClass]="{'off':isHidden(series.VOLT)}" (click)='toggle(series.VOLT)'>
+      <figure>
+        <p>VOLT</p>
+      </figure>
+    </article>
+    <article class='selectable lownormal' [ngClass]="{'off':isHidden(series.KW)}" (click)='toggle(series.KW)'>
+      <figure>
+        <p>kW</p>
+      </figure>
+    </article>
+  </div>
+  <div class='hexagon delete'>
+    <article class='selectable delete' (click)='deleteFile()'>
+      <figure>
+        <p>DELETE</p>
+      </figure>
+    </article>
+  </div>
+</section>
+<div id='data_view'>
+  <section class='report'>
+    <status-bar id='title' [data]="{ title: 'HIGHLIGHTS'}"></status-bar>
+    <status-bar [data]="mphStatus"></status-bar>
+    <status-bar [data]="ampStatus"></status-bar>
+    <status-bar [data]="kwStatus"></status-bar>
+    <status-bar [data]="lowVoltStatus"></status-bar>
+    <status-bar [data]="highVoltStatus"></status-bar>
+    <status-bar [data]="highTorqueStatus"></status-bar>
+    <status-bar [data]="quickestZeroSixty"></status-bar>
+  </section>
+
+  <section class='graphing_fun'>
+    <div class='graph_container'>
+      <canvas #chart>{{ chart }}</canvas>
+    </div>
+  </section>
+</div>

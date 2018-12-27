@@ -1,0 +1,24 @@
+:host {
+  position: absolute;
+  top: 378px;
+  left: 32px;
+}
+.temp-icon{
+  background-image: url('../../../../assets/images/tempicon.png');
+}
+
+.traction-control-on {
+  background-image: url('../../../../assets/images/traccontrol-on.png');
+}
+.traction-control-off {
+  background-image: url('../../../../assets/images/tracControlOff.png');
+}
+.creep-on {
+  background-image: url('../../../../assets/images/creepon.png');
+}
+.creep-off {
+  background-image: url('../../../../assets/images/creepoff.png');
+}
+.trophy {
+  background-image: url('../../../../assets/images/trophyicon.png');
+}

@@ -1,0 +1,11 @@
+
+<app-dashboard class='dashboard-hidden' [ngClass]="{'dashboard-showing': (showDashboard)}"></app-dashboard>
+<app-disconnected *ngIf="state === 'disconnected'"></app-disconnected>
+<app-init-screen *ngIf="!showDashboard && state !== 'disconnected'" class='dashboard-hidden on' [ngClass]="{'dashboard-showing': (state === 'waiting')}"></app-init-screen>
+<div *ngIf="state !== 'ready'" class="overlay">
+  <p *ngIf="showDashboard || state === 'disconnected'" class="coin_msg">Insert Coin</p>
+  <span class="credit"><p>Credit 0</p></span>
+  <span class="owner">
+    <p>2018-2019 @Jimmy.Built™</p>
+  </span>
+</div>

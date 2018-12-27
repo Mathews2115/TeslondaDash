@@ -1,0 +1,11 @@
+:host {
+  position: absolute;
+  top: 274px;
+  left: 34px;
+  width: 200px;
+  display: inline-block;
+}
+
+canvas {
+  padding-bottom:4px;
+}

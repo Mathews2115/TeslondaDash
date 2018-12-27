@@ -1,0 +1,28 @@
+#battery-pack {
+  border: #7d2b12 4px solid;
+  background-image: url('../../../../assets/images/bpack.png');
+  /* background-image: url('../../../../assets/images/bpack2.png'); */
+}
+
+#battery12v {
+  border: #7d2b12 4px solid;
+  background-image: url('../../../../assets/images/12vBatt.png');
+}
+
+:host {
+  position: absolute;
+  top: 32px;
+  right: 34px;
+  width: 200px;
+  display: inline-block;
+}
+.readout {
+  font-size: 30px;
+  text-align: right;
+  width: 85px;
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle; /* FONT HACK */
+}
+._12v {
+  width: 108px;
+}

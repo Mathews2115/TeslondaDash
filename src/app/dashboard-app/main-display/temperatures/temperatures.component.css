@@ -1,0 +1,24 @@
+:host {
+  position: absolute;
+  top: 220px;
+  right: 34px;
+  width: 200px;
+  display: inline-block;
+}
+
+.temp-label {
+  font-size: 12px;
+  display: inline-block;
+}
+
+table {
+  width: 200px;
+}
+
+.right {
+  text-align: right;
+}
+
+canvas {
+  margin-bottom: 8px;
+}

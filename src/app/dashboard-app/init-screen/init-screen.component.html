@@ -1,0 +1,76 @@
+<div [ngSwitch]="screen">
+  <table class="scores">
+      <tr>
+        <td>1up 00</td>
+        <td>Score: 281300</td>
+        <td>2.48s</td>
+      </tr>
+  </table>
+  <div id='title_page' *ngSwitchCase="'title'">
+    <canvas #teslondaLogo class="pixelize logo" width=300 height=26></canvas>
+    <canvas #teslondaCar class="pixelize car" width=377 height=165></canvas>
+    <span class="coin_msg">Insert Coin</span>
+  </div>
+  <div id='high_score_page' *ngSwitchCase="'high_score'">
+    <div class='high_scores_container'>
+      <p class="coin_msg">Insert Coin</p>
+      <p class='hs_title'>High Score Rankings</p>
+      <table class="high_scores">
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>0-60</th>
+          <th>Score</th>
+        </tr>
+        <tr class="top_score">
+            <td>1</td>
+            <td>J.B</td>
+            <td>2.48s</td>
+            <td>281300</td>
+          </tr>
+        <tr>
+          <td>1</td>
+          <td>J.B</td>
+          <td>2.73s</td>
+          <td>183384</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>J.B</td>
+          <td>2.74s</td>
+          <td>181948</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>JTG</td>
+          <td>2.94s</td>
+          <td>178999</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>MJM</td>
+          <td>3.13s</td>
+          <td>178891</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>BAD</td>
+          <td>3.22s</td>
+          <td>172002</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>WTF</td>
+          <td>7.01s</td>
+          <td>13000</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>RAD</td>
+          <td>9.09s</td>
+          <td>9000</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

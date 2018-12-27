@@ -1,0 +1,33 @@
+<div class="bg-text"> Motor Temps </div>
+
+
+<table>
+  <tr>
+    <td> <div class="temp-label">Stator</div> </td>
+    <td class='right'>
+      <span class="readout">{{ statorTemp }}</span>
+      <span class="temp-label">°F</span>
+    </td>
+  </tr>
+</table>
+<canvas #statorTempMeter width={{width}} height={{height}}></canvas>
+<table>
+  <tr>
+    <td> <div class="temp-label">Invertor</div> </td>
+    <td class='right'>
+      <span class="readout">{{ invertorTemp }}</span>
+      <span class="temp-label">°F</span>
+    </td>
+  </tr>
+</table>
+<canvas #invertorTempMeter width={{width}} height={{height}}></canvas>
+<div class="readout">{{ flowing }}</div>
+<table>
+  <tr>
+    <td> <div class="temp-label">Inlet</div> </td>
+    <td class='right'>
+      <span class="readout">{{ inletTemp }}</span>
+      <span class="temp-label">°F</span>
+    </td>
+  </tr>
+</table>
