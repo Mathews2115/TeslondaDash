@@ -10,7 +10,8 @@ This project contains the front-end software to run the Teslonda Dashboard. This
 
 ### In defense of myself;
 
-This was a rapid, prototype software, so by no means expect proper style guide technique, any tests or even competent design. I was learning Typescript paradigms, Angular 5x and a few other one-offs, while at the same time trying to get something out as soon as possible. Hey, this was done in my free time when I was trying to be a good husband AND being a Dark Souls fanatic.
+- Why HTML5? Why Angular?  Why everything??
+This was a rapid developed, prototype software to get something fun and rad up and running as soon as possible.  By no means expect proper style guide techniqe or any tests what so ever.  (I'm not a good role model)  I chose Angular 5 with Typescript because I needed to get up to speed with those two technologies and I wanted to get as much bang for my buck when diving into a new project, also, I'm a glutton for punishment.   Hey, this was done in my free time when I was trying to be a good husband AND being a Dark Souls fanatic.
 
 The first screen started out as a 7" display at 800x480. It was mostly designed to run using the HTML5 canvas. Later on, the second screen was a 10" display, at 1080x720. The routes used for this was mostly just css3 widgets.
 
