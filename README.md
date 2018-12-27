@@ -6,7 +6,7 @@ Front-end for the Teslonda Super Car Dash
 
 ## Introduction
 
-This project contains the front-end software to run the Teslonda. This was used in conjunction with the Teslonda NodeJS server.
+This project contains the front-end software to run the Teslonda Dashboard. This was used in conjunction with the Teslonda NodeJS server.
 
 ### In defense of myself;
 
@@ -18,7 +18,7 @@ Binary Websockets are the main connection to the NodeJS server for the data.
 
 ### General Overview
 
-The stack is Angular 5 at the time; (on top of a NodeJS server with express). Default root route is the main dash screen; the `/main` will load the add-on screen.
+The stack is Angular 5; (on top of a NodeJS server with express). Default root route is the main dash screen; the `/main` will load the add-on screen.
 For the main/default route:
 
 - When there is no active websocket connection, the dash will go into an "idle" mode where it will display a demo title screen, high score screen and a 'demo' dash screen.
