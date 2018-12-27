@@ -2,6 +2,7 @@
 
 Front-end for the Teslonda Super Car Dash
 Used in conjection with Teslonda Server: https://github.com/Mathews2115/TeslondaServer
+RPI setup: https://gist.github.com/Mathews2115/ed3dbd8623ee815a7bed363dbc7c73a6
 
 ## Introduction
 
