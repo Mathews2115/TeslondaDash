@@ -4,6 +4,11 @@ Front-end for the Teslonda Super Car Dash
 * Used in conjection with [Teslonda Server](https://github.com/Mathews2115/TeslondaServer)
 * [RPI setup](https://gist.github.com/Mathews2115/ed3dbd8623ee815a7bed363dbc7c73a6)
 
+https://i.imgur.com/mIar8jR.jpg
+https://i.imgur.com/hzBzcPA.jpg
+https://i.imgur.com/LsskNRd.mp4
+https://i.imgur.com/rSgDKpG.mp4
+
 ## Introduction
 
 This project contains the front-end software to run the Teslonda Dashboard. This was used in conjunction with the Teslonda NodeJS server.
