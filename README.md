@@ -35,7 +35,7 @@ For the main/default route:
 
 ## Development server
 
-Then Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Then Run `ng serve` or `yarn start` `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 # automated bs goes below
 
@@ -47,7 +47,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+1. Install NodeJS 10 or larger
+2. make sure you have the latest version of NodeJS (and Yarn or NPM)
+
+Run `ng build` (or through your package manager like `yarn build` or `npm build`) to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 1. `ng build --prod --build-optimizer --aot`
 2. `cp -r ./dist ../can-server/public`
