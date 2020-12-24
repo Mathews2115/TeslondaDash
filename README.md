@@ -55,7 +55,7 @@ Run `ng build` (or through your package manager like `yarn build` or `npm build`
 1. `ng build --prod --build-optimizer --aot`
 2. `cp -r ./dist ../can-server/public`
 3. `scp -r ../can-server/public pi@yourPi.local:/home/pi/can-server/`
-4. `canplayer vcan0=can0 -l i -I test-hsr-can-dump.log`
+4. `canplayer vcan0=can0 -l i -I ~/can-server/dump/test-hsr-can-dump.log`
 
 ## Further help
 
