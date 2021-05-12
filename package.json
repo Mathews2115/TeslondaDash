@@ -29,7 +29,7 @@
     "@types/socket.io": "^1.4.34",
     "@types/socket.io-client": "^1.4.32",
     "@types/socket.io-parser": "^2.2.0",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-downsample": "^1.0.2",
     "chartjs-plugin-zoom": "^0.6.3",
     "core-js": "^2.5.7",
