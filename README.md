@@ -1,3 +1,8 @@
+# Project Finished - moving on to 
+* https://github.com/Mathews2115/AutoDashBackEnd
+* https://github.com/Mathews2115/AutoDashFrontEnd
+
+
 # Teslonda Front-end (Dashboard)
 
 Front-end for the Teslonda Super Car Dash
